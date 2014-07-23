@@ -10,7 +10,7 @@ import javax.swing.*;
 public class QEyboard {
 
 	public static void main(String[] args) {
-		final JPanel panel = new JPanel(new GridLayout(6, 1, 0, 2));
+		final JPanel panel = new JPanel(new GridLayout(6, 1));
 
 		JPanel firstRow = new JPanel();
 		firstRow.add(new Key("Esc", KeyEvent.VK_ESCAPE));
@@ -122,13 +122,13 @@ public class QEyboard {
 		sixthRow.add(new SpecKey("Ctrl", KeyEvent.VK_CONTROL));
 		sixthRow.add(new SpecKey("Alt", KeyEvent.VK_ALT));
 		sixthRow.add(new Key(
-				"                                                   SPACE                                                 ",
+				"                                                   SPACE                                                ",
 				KeyEvent.VK_SPACE));
 		sixthRow.add(new Key("\u2190", KeyEvent.VK_LEFT));
 		sixthRow.add(new Key("\u2193", KeyEvent.VK_DOWN));
 		sixthRow.add(new Key("\u2192", KeyEvent.VK_RIGHT));
 		panel.add(sixthRow);
-
+		
 		JFrame f = new JFrame("QEyboard");
 		f.getContentPane().add(panel);
 		f.setSize(1100, 350);
@@ -180,8 +180,6 @@ public class QEyboard {
 		f.setResizable(false);
 		f.setFocusableWindowState(false);
 		f.setAlwaysOnTop(true);
-		f.setLayout(new BoxLayout(f.getContentPane(), BoxLayout.X_AXIS));
-
 	}
 
 }

@@ -80,8 +80,6 @@ public class QEyboard {
 
 		final JPanel fourthRow = new JPanel();
 
-		fourthRow.add(new SpecKey("Caps Lock", KeyEvent.VK_CAPS_LOCK));
-
 		fourthRow.add(new Key("A", KeyEvent.VK_A));
 		fourthRow.add(new Key("S", KeyEvent.VK_S));
 		fourthRow.add(new Key("D", KeyEvent.VK_D));
@@ -128,7 +126,7 @@ public class QEyboard {
 		sixthRow.add(new Key("\u2193", KeyEvent.VK_DOWN));
 		sixthRow.add(new Key("\u2192", KeyEvent.VK_RIGHT));
 		panel.add(sixthRow);
-		
+
 		JFrame f = new JFrame("QEyboard");
 		f.getContentPane().add(panel);
 		f.setSize(1100, 350);
@@ -142,11 +140,10 @@ public class QEyboard {
 			}
 
 			public void windowClosing(WindowEvent e) {
-				SpecKey[] keys = { (SpecKey) fourthRow.getComponent(0),
-						(SpecKey) fifthRow.getComponent(0),
+				SpecKey[] keys = { (SpecKey) fifthRow.getComponent(0),
 						(SpecKey) sixthRow.getComponent(0),
 						(SpecKey) sixthRow.getComponent(1) };
-				for(int i = 0; i < keys.length; i++){
+				for (int i = 0; i < keys.length; i++) {
 					if (keys[i].getModel().isPressed())
 						keys[i].doClick();
 				}
